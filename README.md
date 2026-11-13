@@ -36,20 +36,6 @@ claude plugin install ml-referee@mlemes
 
 Keep that environment active when launching Claude Code from your ML project. Follow the [project setup and sealing instructions](https://github.com/mlemes/ml-referee/blob/release/claude-plugin-0.1.0/README.md) before training. The plugin retains its guard and recorder hooks; catalog installation alone does not install Python dependencies or seal data.
 
-## Existing marketplace users
-
-Run `claude plugin marketplace add mlemes/claude-plugins` to switch an existing registration to this repository. Claude Code updates the source without changing installed plugin identifiers. To roll back, add your previous source again.
-
-If Claude Code reports that the source conflicts with `extraKnownMarketplaces` in your user settings, change only `extraKnownMarketplaces.mlemes.source` in `~/.claude/settings.json` to the following, then rerun the add command:
-
-```json
-{"source": "github", "repo": "mlemes/claude-plugins"}
-```
-
-Keep the other settings unchanged. If the declaration is managed by your organization, ask its administrator to update it.
-
-The older catalog at `mlemes/quotaline` remains available for compatibility. The marketplace name stays `mlemes`, so plugin identifiers do not change. This repository is the canonical catalog for future updates.
-
 ## Maintaining the catalog
 
 Update the relevant GitHub source commit in `.claude-plugin/marketplace.json` after reviewing a plugin release. When updating ML Referee, also update the matching Python installation commit above. Validate with:
